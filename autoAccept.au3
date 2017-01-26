@@ -1,4 +1,5 @@
 #RequireAdmin
+
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
 #AutoIt3Wrapper_Outfile=autoAccept.exe
 #AutoIt3Wrapper_Res_Comment=Created by ShadyShell
@@ -8,7 +9,7 @@
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 #include <WinAPI.au3>
 $tPoint = DllStructCreate("int X;int Y")
-$list=WinList("League Client")
+$list=WinList("League of Legends")
 $WinLoc=WinGetPos($list[1][1])
 DllStructSetData($tpoint, "X", $WinLoc[2]/2.11)
 DllStructSetData($tpoint, "Y", $WinLoc[2]/1.56)
