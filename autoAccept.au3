@@ -11,23 +11,22 @@
 $tPoint = DllStructCreate("int X;int Y")
 $list=WinList("League of Legends")
 $WinLoc=WinGetPos($list[1][1])
-DllStructSetData($tpoint, "X", $WinLoc[2]/2.11)
-DllStructSetData($tpoint, "Y", $WinLoc[2]/1.56)
+DllStructSetData($tpoint, "X", $WinLoc[2]/2.115)
+DllStructSetData($tpoint, "Y", $WinLoc[2]/1.557)
 _WinAPI_ClientToScreen(WinGetHandle($list[1][1]), $tPoint)
 $iColor = PixelGetColor(DllStructGetData($tpoint, "X"),DllStructGetData($tpoint, "Y")-270)
-
 While WinExists($list[1][1], "") == 1
 	Sleep(300)
-	If ($iColor == "10733511" Or $iColor == "13499130") Then
+	If ($iColor == "8297115" Or $iColor == "11064278") Then ;old = 10733511 & 13499130
 		MouseClick("left",DllStructGetData($tpoint, "X"),DllStructGetData($tpoint, "Y")-270)
 		;MouseMove(DllStructGetData($tpoint, "X"),DllStructGetData($tpoint, "Y")-270)
-		DllStructSetData($tpoint, "X", $WinLoc[2]/2.11)
-		DllStructSetData($tpoint, "Y", $WinLoc[2]/1.56)
+		DllStructSetData($tpoint, "X", $WinLoc[2]/2.115)
+		DllStructSetData($tpoint, "Y", $WinLoc[2]/1.557)
 		_WinAPI_ClientToScreen(WinGetHandle($list[1][1]), $tPoint)
 		$iColor = PixelGetColor(DllStructGetData($tpoint, "X"),DllStructGetData($tpoint, "Y")-270)
 	Else
-		DllStructSetData($tpoint, "X", $WinLoc[2]/2.11)
-		DllStructSetData($tpoint, "Y", $WinLoc[2]/1.56)
+		DllStructSetData($tpoint, "X", $WinLoc[2]/2.115)
+		DllStructSetData($tpoint, "Y", $WinLoc[2]/1.557)
 		_WinAPI_ClientToScreen(WinGetHandle($list[1][1]), $tPoint)
 		$iColor = PixelGetColor(DllStructGetData($tpoint, "X"),DllStructGetData($tpoint, "Y")-270)
 	EndIf
